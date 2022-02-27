@@ -4,7 +4,9 @@
 [comment]: # (02272022)
 
 This project is organized into the following sections and subsections:
-- **Network Topology** Live network environment including Hyper-V Host m
+- **Network Topology** Live network environment illustrating connectivity and traffic flow among:
+ -Host machine
+ --Attacking machine
 - **Red Team** Security Assessment
 - **Blue Team** Log Analysis and Attack Characterization
 - **Hardening** Proposed Alarms and Mitigation Strategies
