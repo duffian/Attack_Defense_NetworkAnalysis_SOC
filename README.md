@@ -1,7 +1,9 @@
 # SIEM_SOC
-# Supporting SOC infrastructure - Combining offensive security, defensive security, and network analysis to produce a comprehensive security  report
+# Supporting SOC Infrastructure - Combining offensive security, defensive security, and network analysis to produce a comprehensive security report for the SOC team.
 
 [comment]: # (this is the syntax for a comment)
+
+The final product in this project is a group effort and contains group work.
 
 This project is organized into the following sections and subsections:
 - **Network Topology:** Live network environment
