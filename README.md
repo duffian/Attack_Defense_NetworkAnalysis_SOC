@@ -33,6 +33,15 @@ In this environment the ELK server is monitoring the vulnerable and taregeted ma
 ![image](LINKTOIMAAGEINGITHUBREPOSITORY)
 
 ---
+
 ## Offensive Security
+
+---
+
+## Defensive Security
+
+--
+
+## Network Analysis
 
 
