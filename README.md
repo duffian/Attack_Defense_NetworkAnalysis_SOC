@@ -4,14 +4,15 @@
 [comment]: # (02272022)
 
 This project is organized into the following sections and subsections:
-- **Network Topology** Live network environment illustrating connectivity and traffic flow among:
-    - Host machine
-    - Attacking machine
-    - Vulnerable Web Server
-    - Wordpress Target
-    - ELK Server
--Attacking machine
-- **Red Team** Security Assessment
+- **Offensive Security** Security assessment of vulnerable VM and verification of working Kibana rules 
+    - Live network environment illustrating connectivity and traffic flow among
+        - Host machine
+        - Attacking machine
+        - Vulnerable Web Server
+        - Wordpress Target
+        - ELK Server
+- **Offensive Security** Security assessment of vulnerable VM and verification of working Kibana rules
+    - 
 - **Blue Team** Log Analysis and Attack Characterization
 - **Hardening** Proposed Alarms and Mitigation Strategies
 ___
