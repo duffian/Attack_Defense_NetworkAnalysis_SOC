@@ -1,5 +1,5 @@
 # SIEM_SOC
-# Supporting SOC infrastructure - Combining offensive security, defensive security, and network analysis
+# Supporting SOC infrastructure - Combining offensive security, defensive security, and network analysis to produce a comprehensive security  report
 
 [comment]: # (this is the syntax for a comment)
 
