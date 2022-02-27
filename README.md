@@ -4,22 +4,29 @@
 [comment]: # (02272022)
 
 This project is organized into the following sections and subsections:
+- **Network Topology** Live network environment
+    - Host machine
+    - Attacking machine
+    - Vulnerable Web Server
+    - Wordpress Target
+    - ELK Server
 - **Offensive Security** Security assessment of vulnerable VM and verification of working Kibana rules 
-    - Live network environment illustrating connectivity and traffic flow among
-        - Host machine
-        - Attacking machine
-        - Vulnerable Web Server
-        - Wordpress Target
-        - ELK Server
-- **Offensive Security** Security assessment of vulnerable VM and verification of working Kibana rules
+    - Critical Vulnerabilities
+    - Exploits Used
+    - Avoiding Detection
+    -    
+- **Defensive Security** Creating and implementing alerts and thresholds
     - 
-- **Blue Team** Log Analysis and Attack Characterization
-- **Hardening** Proposed Alarms and Mitigation Strategies
+- **Network Analysis** Network forensics and analysis
+    - Critical Vulnerabilities
+    - Traffic profile
+    - Normal activity
+    - Malicious activity
 ___
 
-In this activity, Red Team acts as a malicious actor attempting to gain unauthorized access to a network. Blue Team monitors and analyses the activity. The ultimate objective is for Blue Team to identify vulnerabilities and to improve network security. 
+In this activity, WE DID STUFF 
 
 ## Network Topology
 
-In this environment Blue Team is defending against Red Team attacks.
+In this environment the ELK server is monitoring machines while they are being attacked.
 ![image](LINKTOIMAAGEINGITHUBREPOSITORY)
