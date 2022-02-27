@@ -27,7 +27,7 @@ This project is organized into the following sections and subsections:
     - Malicious activity
 ___
 
-In this activity SIEM engineers conduct offensive security, defensive security, and network analysis acivities to provide the SOC team with a comprehensive security report. This combined effort is designed to support SOC infrastructure and defensive cybersecurity posture. 
+In this activity SIEM engineers conduct offensive security, defensive security, and network analysis acivities to provide the SOC team with a comprehensive security report. 
 
 ## Network Topology
 
