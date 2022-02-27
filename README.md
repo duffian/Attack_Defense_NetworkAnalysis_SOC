@@ -10,23 +10,28 @@ This project is organized into the following sections and subsections:
     - Vulnerable Web Server
     - Wordpress Target
     - ELK Server
-- **Offensive Security** Security assessment of vulnerable VM and verification of working Kibana rules 
+- **Offensive Security** Security assessment of vulnerable VM and verification of working Kibana rules.
     - Critical Vulnerabilities
     - Exploits Used
     - Avoiding Detection
-    -    
+    - Maintaining Access   
 - **Defensive Security** Creating and implementing alerts and thresholds
-    - 
+    - Alerts Implemented
+    - Hardening
+    - Implementing Policies
 - **Network Analysis** Network forensics and analysis
-    - Critical Vulnerabilities
-    - Traffic profile
-    - Normal activity
+    - Traffic Profile
+    - Normal Activity
     - Malicious activity
 ___
 
-In this activity, WE DID STUFF 
+In this activity SIEM engineers conduct offensive security, defensive security, and network analysis ativities to provide the SOC team with a comprehensive security report. This combined effort is designed to support SOC infrastructure and defensive cybersecurity posture. 
 
 ## Network Topology
 
-In this environment the ELK server is monitoring machines while they are being attacked.
+In this environment the ELK server is monitoring the vulnerable and taregeted machines while an during an attack. 
 ![image](LINKTOIMAAGEINGITHUBREPOSITORY)
+
+BLAH BLAH BLAH STUFF AND THINGS
+---
+## Offensive Security
