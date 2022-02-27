@@ -29,11 +29,10 @@ In this activity SIEM engineers conduct offensive security, defensive security, 
 
 ## Network Topology
 
-**Network Topology**
-
-In this environment the ELK server is monitoring the vulnerable and taregeted machines while an during an attack. 
+In this environment the ELK server is monitoring the vulnerable and taregeted machines while an as they are being attacked. 
 ![image](LINKTOIMAAGEINGITHUBREPOSITORY)
 
-BLAH BLAH BLAH STUFF AND THINGS
 ---
 ## Offensive Security
+
+
