@@ -4,13 +4,13 @@
 [comment]: # (02272022)
 
 This project is organized into the following sections and subsections:
-- **Network Topology** Live network environment
+- **Network Topology-** Live network environment
     - Host machine
     - Attacking machine
     - Vulnerable Web Server
     - Wordpress Target
     - ELK Server
-- **Offensive Security** Security assessment of vulnerable VM and verification of working Kibana rules.
+- **Offensive Security:** Security assessment of vulnerable VM and verification of working Kibana rules.
     - Critical Vulnerabilities
     - Exploits Used
     - Avoiding Detection
