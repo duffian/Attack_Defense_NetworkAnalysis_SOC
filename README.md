@@ -1,7 +1,7 @@
-# Attack_Defense_NetworkAnalysis_SOC
-# Supporting SOC infrastructure - Offensive security assessment and analysis, defensive security investigation and analysis, and network forensics and analysis.
+# SIEM_SOC
+# Supporting SOC infrastructure - Combining offensive security, defensive security, and network analysis
 
-[comment]: # (02272022)
+[comment]: # (this is the syntax for a comment)
 
 This project is organized into the following sections and subsections:
 - **Network Topology:** Live network environment
@@ -25,7 +25,7 @@ This project is organized into the following sections and subsections:
     - Malicious activity
 ___
 
-In this activity SIEM engineers conduct offensive security, defensive security, and network analysis ativities to provide the SOC team with a comprehensive security report. This combined effort is designed to support SOC infrastructure and defensive cybersecurity posture. 
+In this activity SIEM engineers conduct offensive security, defensive security, and network analysis acivities to provide the SOC team with a comprehensive security report. This combined effort is designed to support SOC infrastructure and defensive cybersecurity posture. 
 
 ## Network Topology
 
