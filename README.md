@@ -5,9 +5,12 @@
 
 This project is organized into the following sections and subsections:
 - **Network Topology** Live network environment illustrating connectivity and traffic flow among:
--     maybe
     - Host machine
---Attacking machine
+    - Attacking machine
+    - Vulnerable Web Server
+    - Wordpress Target
+    - ELK Server
+-Attacking machine
 - **Red Team** Security Assessment
 - **Blue Team** Log Analysis and Attack Characterization
 - **Hardening** Proposed Alarms and Mitigation Strategies
