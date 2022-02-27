@@ -35,12 +35,11 @@ In this environment the ELK server is monitoring the vulnerable and taregeted ma
 ---
 
 ## Offensive Security
-
 ---
 
 ## Defensive Security
 
---
+---
 
 ## Network Analysis
 
