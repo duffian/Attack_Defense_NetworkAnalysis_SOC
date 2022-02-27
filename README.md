@@ -32,13 +32,12 @@ In this activity SIEM engineers conduct offensive security, defensive security, 
 In this environment the ELK server is monitoring the vulnerable and taregeted machines while an as they are being attacked. 
 ![image](LINKTOIMAAGEINGITHUBREPOSITORY)
 
----
-
 ## Offensive Security
----
+
 
 ## Defensive Security
-
+___
+## Defensive Security
 ---
 
 ## Network Analysis
