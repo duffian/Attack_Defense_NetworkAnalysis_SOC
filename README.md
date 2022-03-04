@@ -304,23 +304,89 @@ Compiled Alert Visualization
 
 **Hardening**
 
-Effective hardening methods should explain
+Effective hardening methods should address
     - how to patch a target against the vulnerabilities
     - why the patch works and how to install the patch
 
-**Hardening Against on Target 1**
+***Hardening Against Poorly Secured SSH Port on Target 1***
 
-![image]() [S34]
+Hardening/Mitigation
+>Configure host to change default ssh port 22 to a new custom port
 
-**Hardening Against on Target 1**
+Why it works
+>ssh is set to listen on port 22 by default making it a well-known potential entry point for cyber attackers
 
-![image]() [S35]
+>changing the default ssh port makes it harder to find and exploit
 
-**Hardening Against on Target 1**
+![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/34_sshporthard_a.png) 
 
-![image]()  [S36_c]
+Hardening/Mitigation
+>Enable IP allowed list on firewall
+
+Why it works
+>"Whitelisting" IPs creates a specific rule in your firewall to only open ssh port for the IPs listed
+>
+>All other treffic is filtered and blocked
+
+![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/34_sshporthard_b.png)
+
+
+
+***Hardening Against Weak User Password on Target 1***
+
+Hardening/Mitigation
+>Implement MFA
+
+>Institute and enforce strong password policy
+>  - require several different types of characters
+>  - institute mandatory password reset every 3 months and disallow repeat passwords
+
+>Configure lockout policy to protect against brute force attacks
+>  - "fail2ban" utility
+
+
+![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/35_wkpwdhard_a.png)
+
+![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/35_wkpwdhard_b.png)  
+
+![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/35_wkpwdhard_c.png)  
+
+***Hardening Against WordPress Enumeration on Target 1***
+
+Hardening/Mitigation
+>Configure host system to restrict the WordPress Rest API
+
+Why it works
+>WPScan uses Rest API to enumerate users. Restricting Rest API will restrict WPScan enumeration capability.
+
+How to Patch
+>add plugins
+>
+>activate plugins
+>
+>Disables the WordPress API for anyone not logged in
+
+![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/36_enumhard_a.png)  
+
+Hardening/Mitigation
+>Disable scans and block user enumeration via .htcaccess
+
+Why it works
+>Adds security by editing code of `funtions.php` file
+
+![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/36_enumhard_b.png)  
+
+>Adds sections by editing code of the site's root 
+
+![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/36_enumhard_c.png)  
+
+
+
+**Implementing Patches with Ansible**
+Explain the vulnerability each task in the playbook addresses
 
 ## Network Analysis
+
 
 The objective is to analyze network traffic to identify suspicious or malicious activity.
 
