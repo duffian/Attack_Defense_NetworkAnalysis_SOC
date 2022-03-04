@@ -416,11 +416,11 @@ Kind of Traffic
 Protocol
 >UDP over port 53;8.8.8.8
 
-Specific user action
+Specific User Action
 > Querying Google DNS servers for "orbike.com" site data 
 ![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/45_normact_dns.png) 
 
-Packet data justifying conclusions
+Packet Data
 >![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/46_normact_dns.png) 
 
 ***Malicious Activity - Time Thieves*** 
@@ -433,7 +433,7 @@ Protocol
 
 >TCP
 
-Specific user action
+Specific User Action
 >Users created web server to access YouTube
 
 >Domain name "frank-n-ted.com"
@@ -456,20 +456,18 @@ Kind of Traffic
 Protocol
 >http
 
-Specific user action
+Specific User Action
 >The malicious file `june11.dll` was downloaded on machine with IP Address 10.6.12.203
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/49_malactmalfiledl_a.png) 
 
-![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/49_malactmalfiledl_b.png) 
-
 ![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/49_malfil_c.png)  
-
+![image]()
 
 
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/49_malfil_d.png) 
-
+![image]()
 
 
 
@@ -489,10 +487,10 @@ Protocol
 
 >NetBios over TCP/IP
 
-Specific user action
+Specific User Action
 >Rotterdam workstation use
 
-Packet data justifying conclusions 
+Packet Data 
 >Infected host machine on network
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/50_malact_infect.png) 
@@ -501,19 +499,21 @@ Packet data justifying conclusions
 ***Malicious Activity - Illegal Downloads***
 
 Kind of Traffic
-> `http.request.method == GET && http.request.uri contains torrent  
-
+>`http.request.method == GET && http.request.uri` contains torrent  
+>
 >illegal torrent download
 
 Protocol
 >http
 
-Specific user action
+Specific User Action
 >User torrented "Betty_Boop_Rhythm_on_the_Reservation.avi.torrent"
 
-Packet data justifying conclusions
+Packet Data
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/51_malact_illdwnld.png) 
+
+---
 
 
 
