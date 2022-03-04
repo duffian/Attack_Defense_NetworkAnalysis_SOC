@@ -27,10 +27,28 @@ ___
 
 In this activity SIEM engineers conduct offensive, defensive, and network analysis acivities to provide the SOC team with a comprehensive security report. Approaching potential cybersecurity threats from multiple perspectives is likely to provide a more complete threat analysis. 
 
+
+
+
+
+
+
+
+
+
 ## Network Topology
 
 In this environment the Kali Linux machine is the attacking machine. The ELK server is monitoring the vulnerable target machines as the attacking machine seeks to exploit the system.  
 ![image](https://github.com/duffian/SIEM_SOC/blob/c5adcec83f0fa95bcf9e85064ce7755635b05f36/images/proj3_topology.png)
+
+
+
+
+
+
+
+
+
 
 ## Offensive Security
 
@@ -104,116 +122,128 @@ What did the exploit achieve?
 ![image](https://github.com/duffian/SIEM_SOC/blob/a89a67f44005945181d2897d97e6466921eec59a/images/12_rootcreds.png)
 ![image](https://github.com/duffian/SIEM_SOC/blob/a89a67f44005945181d2897d97e6466921eec59a/images/13_pe.png)
 
-
-
-
-
-
 **Avoiding Detection**
 
-Identifying the key data points and understanding how monitoring system alerts are generated helps the offensive SIEM engineer avoid detection. This expands the scope of potential system vulnerabilities discovered by the SIEM engineer. 
+Understanding monitoring helps avoid mitigation.
 
-Monitoring - Identify alerts, metrics, and thresholds 
+Identifying the key data points used and understanding how monitoring system alerts are generated helps the offensive SIEM engineer avoid detection. This expands the scope of potential system vulnerabilities not already accounted for. 
 
-Mitigation - How can you execute the same exploit without triggering the alert? Are there alternative exploits that may perform better? 
+
+Monitoring 
+  - Identify the alerts that could detect this exploit
+  - Identify the metrics these alerts measure
+  - Identify the thresholds the alerts fire at, and thresholds 
+
+Mitigation 
+  - How can you execute the same exploit without triggering the alert? 
+  - Are there alternative exploits that may perform better? 
  
-![image](https://github.com/duffian/SIEM_SOC/blob/dcdcb2395afc40104128b2e63049f37ae94e1a84/images/15_introalerts.png) 
+***Stealth Exploitation of Poorly Secured SSH Port***
+Alerts that detect this exploit:
+>Port scanning alerts
+>Alerts monitoring for unauthorized access through ssh port
+Metric
+>`WHEN sum () of http.request.bytes OVER all documents`
+Threshold
+>`IS ABOVE 3500 FOR THE LAST 1 minute`
 
-**Stealth Exploitation of Poorly Secured SSH Port**
-
-    - Monitoring Overview
-        - Alerts that detect this exploit:
-		  - Port scanning traffic alerts
-		  - Alerts monitoring for Unauthorized access through ssh port
-        - Metric = `WHEN sum () of http.request.bytes OVER all documents`
-        - Threshold = `IS ABOVE 3500 FOR THE LAST 1 minute`
-
-
-    - Mitigation Detection
-        - How can you execute the same exploit without triggering the alert? 
-		  - Stealth scan
-		  - Fast scan
-		  - Limited-time scan
-Stealth scan:
+How can you execute the same exploit without triggering the alert? 
+>Stealth scan
 `nmap -sS`
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/dcdcb2395afc40104128b2e63049f37ae94e1a84/images/16_nmap_stlth.png) 
 
-Fast scan:
+>Fast scan
+>Limited time scan
 `nmap -F`
 ![image](https://github.com/duffian/SIEM_SOC/blob/dcdcb2395afc40104128b2e63049f37ae94e1a84/images/17_ssh_stlth.png)
 
 **Stealth Exploitation of WordPress Susceptible to Enumeration**
+Alerts that detect this exploit:
+>Alerts monitoring traffic from suspicious sources
+>Alerts monitoring traffic from non-white-listed IPs
+Metric = 
+>`WHEN count() GROUPED OVER top 5 ‘http.response.status_code`
+Threshold =
+>`IS ABOVE 400`
 
-    - Monitoring Overview
-        - Alerts that detect this exploit:
-		  - Alerts monitoring traffic from suspicious sources.
-		  - Alerts monitoring traffic from non-white-listed IPs.
-        - Metric = `WHEN count() GROUPED OVER top 5 ‘http.response.status_code`
-        - Threshold = `IS ABOVE 400`
+How can you execute the same exploit without triggering the alert?
+>Scan a WordPress site using random user agents or passive detection
 
-    - Mitigation Detection
-        - How can you execute the same exploit without triggering the alert?
-		  - Scan a WordPress site using random user agents and passive detection.
 `wpscan --url 192.168.1.110/wordpress --stealthy -e u`
-		
 
-![image](images/adn19.png)
 ![image](https://github.com/duffian/SIEM_SOC/blob/dcdcb2395afc40104128b2e63049f37ae94e1a84/images/adn19.png)
 
-**Stealth Exploitation of Weak User Password**
+***Stealth Exploitation of Weak User Password***
+Alerts that detect this exploit
+>CPU Usage Monitoring
+>  - Alerts monitoring abnormal CPU usage according to time.
+>  - Alerts monitoring abnormally high CPU usage.
+Metric =
+>`WHEN max() OF system.process.cpu.total pct OVER all documents`
+Threshold =
+>`IS ABOVE 0.5` 
 
-    - Monitoring Overview
-        - Alerts that detect this exploit: CPU Usage Monitoring
-		  - Alerts monitoring abnormal CPU usage according to time.
-		  - Alerts monitoring abnormally high CPU usage.
-        - Metric = `WHEN max() OF system.process.cpu.total pct OVER all documents`
-        - Threshold = `IS ABOVE 0.5` (or norm for company)
+How can you execute the same exploit without triggering the alert? 
+>limit the resources used to execute the brute force password cracking
+>limit duration of brute force attempt
 
-    - Mitigation Detection
-        - How can you execute the same exploit without triggering the alert? 
 `$ hydra -l michael -t 4 P /usr/share/wordlists/rockyou.txt 192.168.1.110 ssh`
-  - -t limits tasks per attempt
+>-t limits tasks per attempt
+
 `$ hydra -l michael -w 5 P /usr/share/wordlists/rockyou.txt 192.168.1.110 ssh`
-  - -w defines max wait time
+>-w defines max wait time
   
 ![image](https://github.com/duffian/SIEM_SOC/blob/e65bdfaa5b51d75846e8a35e70dc7db5d75ab504/images/20_hydratasklimit.png) 
 ![image](https://github.com/duffian/SIEM_SOC/blob/e65bdfaa5b51d75846e8a35e70dc7db5d75ab504/images/21_hydrawaittimelimit.png)
 
-**Stealth Exploitation of No File Security**
+***Stealth Exploitation of No File Security***
 
-    - Monitoring Overview
-        - Alerts that detect this exploit: Alerts monitoring traffic from;
-		  - suspicious/malicious sources
-		  - non-white-listed IPs
-		  - unauthorized accounts
-		  - root user logins
-        - Metric = `user.name: root AND source.ip: 192.168.1.90 AND destination.ip: 192.168.1.110 OR event.action: ssh_login OR event.outcome: success`
-        - Threshold = `IS ABOVE 1`
+Alerts that detect this exploit
+>Alerts monitoring traffic from;
+>  - suspicious/malicious sources
+>  - non-white-listed IPs
+>  - unauthorized accounts
+>  - root user logins
 
-    - Mitigation Detection
-        - How can you execute the same exploit without triggering the alert? 
-		  - Remove evidence of instrusion/unauthorized access
-		  - Mask source IP
-		- Are there alternative exploits that may perform better? If attempts to elevate privileges to sudo are restricted and if root login data is secured with up-to-date password hashes, malicious actors will have a much more difficult time gaining root or elevated permissions.
+>  root user logins
+
+>  - root user logins
+
+  > root user logins
+  
+    > root user logins  
+
+
+Metric =
+>`user.name: root AND source.ip: 192.168.1.90 AND destination.ip: 192.168.1.110 OR event.action: ssh_login OR event.outcome: success`
+
+Threshold =
+>`IS ABOVE 1`
+
+How can you execute the same exploit without triggering the alert?
+>Remove evidence of instrusion/unauthorized access
+>Mask source IP
+
+Are there alternative exploits that may perform better? 
+>If attempts to elevate to sudo privileges are restricted and if root login data is secured with up-to-date password hashes, malicious actors will have a much more difficult time gaining root or elevated permissions.
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/e65bdfaa5b51d75846e8a35e70dc7db5d75ab504/images/22_xtraalerts.png) 
 
 **Maintaining Access**
-Maintain access by writing a script to add an unauthorized user to the target system.
 
-
+Maintain access by writing a script to 	quickly and stealthily add an unauthorized user to the target system
+  - Using a script is quick and decreases the possibility of discovery
+  - A script can automatically obfuscate evidence it exists such as by moving or overwriting logs
 
 Python Script to Add User
 `sudo python -c 'import.pty;pty.spawn("/bin/bash")'`
+
 ![image](https://github.com/duffian/SIEM_SOC/blob/1e64581adce910196643460e232d35489b2fee22/images/23_pythscrp_adduser.png) 
 
-
 ![image](https://github.com/duffian/SIEM_SOC/blob/1e64581adce910196643460e232d35489b2fee22/images/24_pythscrp_adduser.png) 
-Could also write a script to install a backdoor shell listening for the attacker's instructions.
 
-
-
+Could also write a script to install a backdoor shell listening for the attacker's instructions
 
 
 
@@ -361,6 +391,7 @@ Packet data justifying conclusions -
 
 
 
+
 ## Works Cited ##
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/7c7a71069193d7edf6dd3c01aeaff6582064fbc8/images/adn52.png)
@@ -368,6 +399,3 @@ Packet data justifying conclusions -
 
 
 
-
-
-`THIS TEXT IS IN CODE FORMAT`
