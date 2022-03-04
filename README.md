@@ -105,14 +105,14 @@ What tool or technique did you use to exploit the vulnerability?
 `$ hydra -l michael -t 4 -P /usr/share/wordlists/rockyou.txt 192.168.1.110 ssh`
 
 What did the exploit achieve?
->Discovered the login password for user “michael” allowing ssh access into Target 1 Machine
+>Discovered the login password for user “michael” allowing ssh access into Target 1 machine
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/a89a67f44005945181d2897d97e6466921eec59a/images/11_hydra.png) 
 
 ***Exploitation - No File Security***
 
 What tool or technique did you use to exploit the vulnerability?
->Simple directory exploration.
+>Simple directory exploration
 
 What did the exploit achieve?
 >Privelege escalation - login data granted root access to Target 1 mysql data
@@ -120,6 +120,7 @@ What did the exploit achieve?
 `michael@target1:/var/www/html/wp-config.php`
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/a89a67f44005945181d2897d97e6466921eec59a/images/12_rootcreds.png)
+
 ![image](https://github.com/duffian/SIEM_SOC/blob/a89a67f44005945181d2897d97e6466921eec59a/images/13_pe.png)
 
 **Avoiding Detection**
@@ -139,11 +140,14 @@ Mitigation
   - Are there alternative exploits that may perform better? 
  
 ***Stealth Exploitation of Poorly Secured SSH Port***
-Alerts that detect this exploit:
+
+Alerts that detect this exploit
 >Port scanning alerts
 >Alerts monitoring for unauthorized access through ssh port
+
 Metric
 >`WHEN sum () of http.request.bytes OVER all documents`
+
 Threshold
 >`IS ABOVE 3500 FOR THE LAST 1 minute`
 
