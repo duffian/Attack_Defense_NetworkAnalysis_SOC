@@ -198,11 +198,11 @@ How can you execute the same exploit without triggering the alert?
 >-w defines max wait time
   
 ![image](https://github.com/duffian/SIEM_SOC/blob/e65bdfaa5b51d75846e8a35e70dc7db5d75ab504/images/20_hydratasklimit.png) 
-![image]()
+![image](https://github.com/duffian/SIEM_SOC/blob/183e122cc4c183b026186ecbfdbc3bf499ffd5da/images/21_stlthexplwu_a.png)
 
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/e65bdfaa5b51d75846e8a35e70dc7db5d75ab504/images/21_hydrawaittimelimit.png)
-![image]()
+![image](https://github.com/duffian/SIEM_SOC/blob/183e122cc4c183b026186ecbfdbc3bf499ffd5da/images/21_stlthexplwu_b.png)
 
 
 ***Stealth Exploitation of No File Security***
@@ -240,7 +240,7 @@ Python Script to Add User
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/1e64581adce910196643460e232d35489b2fee22/images/24_pythscrp_adduser.png) 
 
-![image]()
+![image](https://github.com/duffian/SIEM_SOC/blob/183e122cc4c183b026186ecbfdbc3bf499ffd5da/images/24_maintaccpythscrp.png)
 
 
 
@@ -294,7 +294,6 @@ Compiled Alert Visualization
 **Hardening**
 
 Effective hardening methods should address
-  - how to patch a target
   
   - how to patch a target against the vulnerabilities
   - why the patch works and how to install the patch
@@ -337,10 +336,10 @@ Hardening
 
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/35_wkpwdhard_a.png)
-![image]()
+![image](https://github.com/duffian/SIEM_SOC/blob/183e122cc4c183b026186ecbfdbc3bf499ffd5da/images/35_mfa.png)
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/35_wkpwdhard_b.png)  
-![image]()
+![image](https://github.com/duffian/SIEM_SOC/blob/183e122cc4c183b026186ecbfdbc3bf499ffd5da/images/35_pwdplcy.png)
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/35_wkpwdhard_c.png)  
 
@@ -372,7 +371,7 @@ Why it works
 >Adds sections by editing code of the site's root 
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/36_enumhard_c.png)  
-![image]()
+![image](https://github.com/duffian/SIEM_SOC/blob/183e122cc4c183b026186ecbfdbc3bf499ffd5da/images/36_editrootcode.png)
 
 ## Network Analysis
 
@@ -462,12 +461,12 @@ Specific User Action
 ![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/49_malactmalfiledl_a.png) 
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/49_malfil_c.png)  
-![image]()
+![image](https://github.com/duffian/SIEM_SOC/blob/183e122cc4c183b026186ecbfdbc3bf499ffd5da/images/49_malfilact_a.png)
 
 
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/49_malfil_d.png) 
-![image]()
+![image](https://github.com/duffian/SIEM_SOC/blob/183e122cc4c183b026186ecbfdbc3bf499ffd5da/images/49_malfilact_b.png)
 
 
 
