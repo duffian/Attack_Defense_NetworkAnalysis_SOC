@@ -356,6 +356,7 @@ Description of any interesting files -
 
 
 ***Normal Activity - DNS***
+
 Kind of Traffic - DNS query for "orbike.com"
 Protocol - UDP over port 53;8.8.8.8
 Specific user action - Querying Google DNS servers for "orbike.com" site data 
