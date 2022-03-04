@@ -198,10 +198,16 @@ How can you execute the same exploit without triggering the alert?
 >-w defines max wait time
   
 ![image](https://github.com/duffian/SIEM_SOC/blob/e65bdfaa5b51d75846e8a35e70dc7db5d75ab504/images/20_hydratasklimit.png) 
+
+
+
 ![image](https://github.com/duffian/SIEM_SOC/blob/183e122cc4c183b026186ecbfdbc3bf499ffd5da/images/21_stlthexplwu_a.png)
 
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/e65bdfaa5b51d75846e8a35e70dc7db5d75ab504/images/21_hydrawaittimelimit.png)
+
+
+
 ![image](https://github.com/duffian/SIEM_SOC/blob/183e122cc4c183b026186ecbfdbc3bf499ffd5da/images/21_stlthexplwu_b.png)
 
 
