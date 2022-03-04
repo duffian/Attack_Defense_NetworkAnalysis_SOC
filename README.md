@@ -101,7 +101,7 @@ Brute forcing passwords using hydra
 
 Discovered the login password for user “michael” allowing ssh access into Target 1 Machine
 
-[SCREENSHOT 11]
+![image](https://github.com/duffian/SIEM_SOC/blob/a89a67f44005945181d2897d97e6466921eec59a/images/11_hydra.png) 
 
 
 **Exploitation - No File Security**
@@ -109,14 +109,15 @@ Discovered the login password for user “michael” allowing ssh access into Ta
     - What tool or technique did you use to exploit the vulnerability?
 
 Simple directory exploration.
+![image](https://github.com/duffian/SIEM_SOC/blob/a89a67f44005945181d2897d97e6466921eec59a/images/12_rootcreds.png)
 
     - What did the exploit achieve?
 
 Privelege escalation: login data granted root access to Target 1 mysql data.
 
 `michael@target1:/var/www/html/wp-config.php`
+![image](https://github.com/duffian/SIEM_SOC/blob/a89a67f44005945181d2897d97e6466921eec59a/images/13_pe.png)
 
-[SCREENSHOT 12-13]
 
 **Avoiding Detection**
 
