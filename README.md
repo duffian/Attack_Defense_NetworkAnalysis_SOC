@@ -70,7 +70,7 @@ What did the exploit achieve?
 
 >Identification of vulnerable ports to potentially gain unauthorized access to the "Target 1" system.
 
-`ssh Michael@192.168.1.110`
+`ssh michael@192.168.1.110`
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/b1ad487330827e1fdd4a7fa298a8a63e6a605ca5/images/8_sshmichael.png)
 
