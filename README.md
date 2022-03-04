@@ -30,21 +30,10 @@ In this activity SIEM engineers conduct offensive, defensive, and network analys
 
 
 
-
-
-
-
-
-
 ## Network Topology
 
 In this environment the Kali Linux machine is the attacking machine. The ELK server is monitoring the vulnerable target machines as the attacking machine seeks to exploit the system.  
 ![image](https://github.com/duffian/SIEM_SOC/blob/c5adcec83f0fa95bcf9e85064ce7755635b05f36/images/proj3_topology.png)
-
-
-
-
-
 
 
 
@@ -78,6 +67,7 @@ What tool or technique did you use to exploit the vulnerability?
 
 What did the exploit achieve?
 >Unauthorized access to the Target 1 machine was achieved by using the unsecured ssh port identified on the vulnerable machine.
+
 >Identification of vulnerable ports to potentially gain unauthorized access to the "Target 1" system.
 
 `ssh Michael@192.168.1.110`
@@ -92,6 +82,7 @@ What tool or technique did you use to exploit the vulnerability?
 `wpscan --url 192.168.1.110/wordpress -e u`
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/0ec4844e2ccdd26a87831fc1e3ef47458b2cb65f/images/9_enumeration.png) 
+
 What did the exploit achieve?
 >Acquisition of usernames and their associated IP addresses.
 
@@ -105,14 +96,14 @@ What tool or technique did you use to exploit the vulnerability?
 `$ hydra -l michael -t 4 -P /usr/share/wordlists/rockyou.txt 192.168.1.110 ssh`
 
 What did the exploit achieve?
->Discovered the login password for user “michael” allowing ssh access into Target 1 machine
+>Discovered the login password for user “michael” allowing ssh access into Target 1 Machine
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/a89a67f44005945181d2897d97e6466921eec59a/images/11_hydra.png) 
 
 ***Exploitation - No File Security***
 
 What tool or technique did you use to exploit the vulnerability?
->Simple directory exploration
+>Simple directory exploration.
 
 What did the exploit achieve?
 >Privelege escalation - login data granted root access to Target 1 mysql data
@@ -143,7 +134,6 @@ Mitigation
 
 Alerts that detect this exploit
 >Port scanning alerts
-
 >Alerts monitoring for unauthorized access through ssh port
 
 Metric
@@ -169,15 +159,13 @@ How can you execute the same exploit without triggering the alert?
 **Stealth Exploitation of WordPress Susceptible to Enumeration**
 
 Alerts that detect this exploit
-
 >Alerts monitoring traffic from suspicious sources
-
 >Alerts monitoring traffic from non-white-listed IPs
 
-Metric 
+Metric = 
 >`WHEN count() GROUPED OVER top 5 ‘http.response.status_code`
 
-Threshold
+Threshold =
 >`IS ABOVE 400`
 
 How can you execute the same exploit without triggering the alert?
@@ -191,11 +179,13 @@ How can you execute the same exploit without triggering the alert?
 
 Alerts that detect this exploit
 >CPU Usage Monitoring
->  - Alerts monitoring abnormal CPU usage according to time.
->  - Alerts monitoring abnormally high CPU usage.
-Metric 
+>  - Alerts monitoring abnormal CPU usage according to time
+>  - Alerts monitoring abnormally high CPU usage
+
+Metric =
 >`WHEN max() OF system.process.cpu.total pct OVER all documents`
-Threshold 
+
+Threshold =
 >`IS ABOVE 0.5` 
 
 How can you execute the same exploit without triggering the alert? 
@@ -215,16 +205,16 @@ How can you execute the same exploit without triggering the alert?
 ***Stealth Exploitation of No File Security***
 
 Alerts that detect this exploit
->Alerts monitoring traffic from
+>Alerts monitoring traffic from;
 >  - suspicious/malicious sources
 >  - non-white-listed IPs
 >  - unauthorized accounts
 >  - root user logins
 
-Metric 
+Metric =
 >`user.name: root AND source.ip: 192.168.1.90 AND destination.ip: 192.168.1.110 OR event.action: ssh_login OR event.outcome: success`
 
-Threshold 
+Threshold =
 >`IS ABOVE 1`
 
 How can you execute the same exploit without triggering the alert?
@@ -240,18 +230,14 @@ Are there alternative exploits that may perform better?
 
 Maintain access by writing a script to 	quickly and stealthily add an unauthorized user to the target system
   - Using a script is quick and decreases the possibility of discovery
-  - A script can automatically obfuscate evidence it exists by moving or overwriting logs
+  - A script can automatically obfuscate evidence it exists such as by moving or overwriting logs
 
 Python Script to Add User
-
 `sudo python -c 'import.pty;pty.spawn("/bin/bash")'`
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/1e64581adce910196643460e232d35489b2fee22/images/23_pythscrp_adduser.png) 
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/1e64581adce910196643460e232d35489b2fee22/images/24_pythscrp_adduser.png) 
-
-Could also write a script to install a backdoor shell listening for the attacker's instructions
-
 
 
 
@@ -267,7 +253,7 @@ When generating alerts it is important to identify
   - the **metric** that the alert monitors
   - the ***threshold** that metric fires at
 	
-Compiled Alert Visualization
+Compiled Alert visualization
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/3b4b8043414274fd9f1d87fdca33da6bb8545a18/images/27_alerts_a.png)
 	
@@ -380,24 +366,15 @@ Why it works
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/36_enumhard_c.png)  
 
-
-
-**Implementing Patches with Ansible**
-Explain the vulnerability each task in the playbook addresses
-
 ## Network Analysis
-
 
 The objective is to analyze network traffic to identify suspicious or malicious activity.
 
 **Traffic Profile and Behavioral Analysis**
 
-***Traffic Profile***
 Network analysis identified the following characteristics of the traffic on the network
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/2553f872a954fa8bff9c6686696817b625736453/images/adn35.png) 
-
-***Behavioral Analysis***
 
     - Purpose of traffic on network
 
@@ -409,42 +386,52 @@ Network analysis identified the following characteristics of the traffic on the 
 
 ***Normal Activity - Web Traffic***
 
-Kind of Traffic - 
+Kind of Traffic
 > Web traffic
 
-Protocol - 
+Protocol
 >HTTP
 
-Specific user action - 
+Specific user action
 > Browsing "orbike.com"
 
-Packet data justifying conclusions - 
+Packet data justifying conclusions
 >![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/42_normact_webtraf.png)
 
-Description of any interesting files - 
+Description of any interesting files
 ![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/43_normact_webtraf.png)
 
 
 ***Normal Activity - DNS***
 
-Kind of Traffic - 
+Kind of Traffic
 >DNS query for "orbike.com"
 
-Protocol - 
+Protocol
 >UDP over port 53;8.8.8.8
 
-Specific user action - 
+Specific user action
 > Querying Google DNS servers for "orbike.com" site data 
 ![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/45_normact_dns.png) 
 
-Packet data justifying conclusions - 
+Packet data justifying conclusions
 >![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/46_normact_dns.png) 
-
-Description of any interesting files - 
->
 
 ***Malicious Activity - Time Thieves*** 
 
+Kind of Traffic
+>ACK
+
+Protocol
+>DHCP
+
+>TCP
+
+Specific user action
+>Users created web server to access YouTube
+>Domain name "frank-n-ted.com"
+
+Packet data justifying conclusions
 
 Users created a web server to access YouTube
 ![image](https://github.com/duffian/SIEM_SOC/blob/2553f872a954fa8bff9c6686696817b625736453/images/adn45.png)
@@ -456,24 +443,40 @@ Users created a web server to access YouTube
 
 ***Malicious Activity - Malicious File Download*** 
 
-Kind of Traffic - 
-Protocol - 
-Specific user action - 
-Packet data justifying conclusions -    
+Kind of Traffic
+>Malicious file download 
+
+Protocol
+>http
+
+Specific user action
+>The malicious file `june11.dll` was downloaded on machine with IP Address 10.6.12.203
+
+Packet data justifying conclusions
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/49_malactmalfiledl_a.png) 
+
 ![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/49_malactmalfiledl_b.png) 
-The malicious file was downloaded on machine IP Address 10.6.12.203
-`june11.dll`
-![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/49_malfil_c.png)
+
+![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/49_malfil_c.png)  
+
+
 "june11.dll" was scanned by anti-malware software "VirusTotal" and flagged as a possible Trojan
+
 ![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/49_malfil_d.png) 
+
+
+
+
 
 
 ***Malicious Activity - Vulnerable Windows Host Machines Infected***
 
 Kind of Traffic 
+>Infected host machine traffic on network
+
 >Infection traffic had substantially higher data transfer
+
 >Potentially spreading infection 
 
 Protocol
@@ -493,7 +496,9 @@ Packet data justifying conclusions
 ***Malicious Activity - Illegal Downloads***
 
 Kind of Traffic
-> `http.request.method == GET && http.request.uri contains torrent`
+> `http.request.method == GET && http.request.uri contains torrent  
+
+>illegal torrent download
 
 Protocol
 >http
@@ -519,6 +524,7 @@ Packet data justifying conclusions
 ## Works Cited ##
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/7c7a71069193d7edf6dd3c01aeaff6582064fbc8/images/adn52.png)
+
 
 
 
