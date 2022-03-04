@@ -333,11 +333,11 @@ Hardening
 >  - "fail2ban" utility
 
 
-![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/35_wkpwdhard_a.png)
 ![image](https://github.com/duffian/SIEM_SOC/blob/183e122cc4c183b026186ecbfdbc3bf499ffd5da/images/35_mfa.png)
 
-![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/35_wkpwdhard_b.png)  
+
 ![image](https://github.com/duffian/SIEM_SOC/blob/183e122cc4c183b026186ecbfdbc3bf499ffd5da/images/35_pwdplcy.png)
+
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/35_wkpwdhard_c.png)  
 
@@ -368,7 +368,7 @@ Why it works
 
 >Adds sections by editing code of the site's root 
 
-![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/36_enumhard_c.png)  
+
 ![image](https://github.com/duffian/SIEM_SOC/blob/183e122cc4c183b026186ecbfdbc3bf499ffd5da/images/36_editrootcode.png)
 
 ## Network Analysis
@@ -458,12 +458,12 @@ Specific User Action
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/49_malactmalfiledl_a.png) 
 
-![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/49_malfil_c.png)  
+
 ![image](https://github.com/duffian/SIEM_SOC/blob/183e122cc4c183b026186ecbfdbc3bf499ffd5da/images/49_malfilact_a.png)
 
 
 
-![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/49_malfil_d.png) 
+
 ![image](https://github.com/duffian/SIEM_SOC/blob/183e122cc4c183b026186ecbfdbc3bf499ffd5da/images/49_malfilact_b.png)
 
 
