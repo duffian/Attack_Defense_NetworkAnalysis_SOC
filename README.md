@@ -329,10 +329,20 @@ The objective is to analyze network traffic to identify suspicious or malicious 
 
 **Traffic Profile and Behavioral Analysis**
 
+***Traffic Profile***
+Network analysis identified the following characteristics of the traffic on the network
+
 ![image](https://github.com/duffian/SIEM_SOC/blob/2553f872a954fa8bff9c6686696817b625736453/images/adn35.png) 
+
+***Behavioral Analysis***
+
+Purpose of traffic on network
+
+"Normal" Activity
+
+"Suspicious" Activity
 ![image](https://github.com/duffian/SIEM_SOC/blob/2553f872a954fa8bff9c6686696817b625736453/images/adn36.png)
 
-**Normal Activity**
 ***Normal Activity - Web Traffic***
 
 Kind of Traffic - Web traffic
@@ -346,7 +356,6 @@ Description of any interesting files -
 
 
 ***Normal Activity - DNS***
-
 Kind of Traffic - DNS query for "orbike.com"
 Protocol - UDP over port 53;8.8.8.8
 Specific user action - Querying Google DNS servers for "orbike.com" site data 
