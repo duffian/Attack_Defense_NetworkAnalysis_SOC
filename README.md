@@ -1,5 +1,7 @@
 # SIEM_SOC
-# Supporting SOC infrastructure - Combining offensive security, defensive security, and network analysis.
+# Supporting SOC Infrastructure - Security Engineer and SIEM Investigation
+
+SOC Analysts have noticed some discrepancies with alerting in the Kibana system. Investigate by confirming Kibana alerts are working. Assess and exploit a vulnerable VM and monitor live network traffic to update Kibana alerts and thresholds. Present findings to SOC Manager and Engineering Manager in a comprehensive final report. to update Kibana alertsAttempt to  monitoring live network traffic to identify network security gaps, and present findings to 
 
 [comment]: # (this is the syntax for a comment)
 
@@ -25,7 +27,7 @@ This project is organized into the following sections and subsections:
     - Malicious activity
 ___
 
-In this activity SIEM engineers conduct offensive, defensive, and network analysis acivities to provide the SOC team with a comprehensive security report. Approaching potential cybersecurity threats from multiple perspectives is likely to provide a more complete threat analysis. 
+In this activity offensive security, defensive security, and network monitoring tasks are performed to evaluate Kibana. Approaching potential cybersecurity threats from multiple perspectives is likely to provide a more complete threat analysis. 
 
 
 
