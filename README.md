@@ -67,7 +67,7 @@ Identification of vulnerable ports to potentially gain unauthorized access to th
 
 `ssh Michael@192.168.1.110`
 
-[SCREENSHOT SLIDE 8]
+![image](https://github.com/duffian/SIEM_SOC/blob/b1ad487330827e1fdd4a7fa298a8a63e6a605ca5/images/8_sshmichael.png)
 
 **Exploitation - WordPress Susceptible to Enumeration**
 
