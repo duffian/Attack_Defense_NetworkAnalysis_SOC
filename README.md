@@ -218,6 +218,8 @@ Maintain access by writing a script to add an unauthorized user to the target sy
 Python Script to Add User
 `sudo python -c 'import.pty;pty.spawn("/bin/bash")'`
 ![image](https://github.com/duffian/SIEM_SOC/blob/1e64581adce910196643460e232d35489b2fee22/images/23_pythscrp_adduser.png) 
+
+
 ![image](https://github.com/duffian/SIEM_SOC/blob/1e64581adce910196643460e232d35489b2fee22/images/24_pythscrp_adduser.png) 
 Could also write a script to install a backdoor shell listening for the attacker's instructions.
 
@@ -238,12 +240,15 @@ The objective is to configure Kibana alerts and make sure they are working corre
 
 **Alerts Overview**
 
-Identify the metric the alert monitors and the threshold that metric fires at.
+When generating alerts it can be helpful to identify
+    - the metric that the alert monitors
+    - the threshold that metric fires at
+	
 ![image]() [S28]
 
 **Alert: CPU Usage Monitor**
 
-![image]() [S29]
+![image]() [S27_a]
 
 **Alert: Excessive HTTP Errors**
 
@@ -255,7 +260,13 @@ Identify the metric the alert monitors and the threshold that metric fires at.
 
 
 **Hardening**
-Explain how to patch the target against the vulnerabilities. Explain why the patch works and how to install the patch.
+Effective hardening methods should explain
+    - how to patch a target against the vulnerabilities
+    - why the patch works and how to install the patch
+
+**Hardening Against on Target 1**
+
+![image]() [S34]
 
 **Hardening Against on Target 1**
 
@@ -263,24 +274,10 @@ Explain how to patch the target against the vulnerabilities. Explain why the pat
 
 **Hardening Against on Target 1**
 
-![image]() [S36]
+![image]()  [S36_c]
 
-**Hardening Against on Target 1**
-
-![image]()  [S37]
-
-
-
-
-
-
-
-
-
-
-
-
-
+**Implementing Patches with Ansible**
+Explain the vulnerability each task in the playbook addresses
 
 ## Network Analysis
 
@@ -288,33 +285,83 @@ The objective is to analyze network traffic to identify suspicious or malicious 
 
 **Traffic Profile and Behavioral Analysis**
 
-![image]() [s39-40]
+![image](https://github.com/duffian/SIEM_SOC/blob/2553f872a954fa8bff9c6686696817b625736453/images/adn35.png) 
+![image](https://github.com/duffian/SIEM_SOC/blob/2553f872a954fa8bff9c6686696817b625736453/images/adn36.png)
 
-**Normal Activity - Web Traffic**
+**Normal Activity**
+***Normal Activity - Web Traffic***
 
-![image]() [s42-44]
+Kind of Traffic - Web traffic
+Protocol - HTTP
+Specific user action - Browsing "orbike.com"
+Screenshots of packets justifying conclusions - 
+![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/42_normact_webtraf.png)
 
-**Normal Activity - DNS**
+Description of any interesting files - 
+![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/43_normact_webtraf.png)
 
-![image]() [s45-47]
+
+***Normal Activity - DNS***
+
+Kind of Traffic - DNS query for "orbike.com"
+Protocol - UDP over port 53;8.8.8.8
+Specific user action - Querying Google DNS servers for "orbike.com" site data 
+![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/45_normact_dns.png) 
+Packet data justifying conclusions - 
+![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/46_normact_dns.png) 
 
 **Malicious Activity**
+***Malicious Activity - Time Thieves*** 
 
-    - Time Thieves
+Kind of Traffic - 
+Protocol - 
+Specific user action - 
+Packet data justifying conclusions - 
 
-![image]() [s49]
 
-    - Malicious File Download
+Users created a web server to access YouTube
+![image](https://github.com/duffian/SIEM_SOC/blob/2553f872a954fa8bff9c6686696817b625736453/images/adn45.png)
+  - Filtered for traffic by IP address to correlate users and IP addresses.
+![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/48_malact_timethfa.png)
+  - Discovered web server domain name "frank-n-ted.com"  and IP address 10.6.12.12
+![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/48_malact_timethfb.png)
 
-![image]() [s50]
 
-    - Vulnerable Windows Machines
 
-![image]() [s51]
 
-    - Illegal Downloads
+***Malicious Activity - Malicious File Download*** 
 
-![image]() [s52]
+Kind of Traffic - 
+Protocol - 
+Specific user action - 
+Packet data justifying conclusions -    
+
+![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/49_malactmalfiledl_a.png) 
+![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/49_malactmalfiledl_b.png) 
+The malicious file was downloaded on machine IP Address 10.6.12.203
+`june11.dll`
+![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/49_malfil_c.png)
+"june11.dll" was scanned by anti-malware software "VirusTotal" and flagged as a possible Trojan
+![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/49_malfil_d.png) 
+
+***Malicious Activity - Vulnerable Windows Host Machines Infected***
+Kind of Traffic - 
+Protocol - 
+Specific user action - 
+Packet data justifying conclusions - 
+
+Infected host machine on network
+![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/50_malact_infect.png) 
+
+
+***Malicious Activity - Illegal Downloads*** 
+Kind of Traffic - 
+Protocol - 
+Specific user action - 
+Packet data justifying conclusions - 
+
+![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/51_malact_illdwnld.png) 
+
 
 
 
@@ -337,7 +384,3 @@ The objective is to analyze network traffic to identify suspicious or malicious 
 
 
 `THIS TEXT IS IN CODE FORMAT`
-
-
-![image]()
-
