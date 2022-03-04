@@ -111,7 +111,7 @@ What did the exploit achieve?
 
 **Avoiding Detection**
 
-Identifying monitoring data and understanding how these data points might be used to protect a system against a malicious cyber attacker helps the offensive SIEM engineer test the cybersecurity of a system more thoroughly.
+Identifying the key data points and understanding how a system might be set up to monitor for these exploitations helps the offensive SIEM engineer test the cybersecurity of a system more thoroughly.
 
 Monitoring - Identify alerts, metrics, and thresholds 
 
