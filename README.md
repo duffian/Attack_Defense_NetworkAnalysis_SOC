@@ -143,6 +143,7 @@ Mitigation
 
 Alerts that detect this exploit
 >Port scanning alerts
+
 >Alerts monitoring for unauthorized access through ssh port
 
 Metric
