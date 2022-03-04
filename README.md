@@ -196,15 +196,8 @@ How can you execute the same exploit without triggering the alert?
 
 `$ hydra -l michael -w 5 P /usr/share/wordlists/rockyou.txt 192.168.1.110 ssh`
 >-w defines max wait time
-  
-![image](https://github.com/duffian/SIEM_SOC/blob/e65bdfaa5b51d75846e8a35e70dc7db5d75ab504/images/20_hydratasklimit.png) 
-
-
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/183e122cc4c183b026186ecbfdbc3bf499ffd5da/images/21_stlthexplwu_a.png)
-
-
-![image](https://github.com/duffian/SIEM_SOC/blob/e65bdfaa5b51d75846e8a35e70dc7db5d75ab504/images/21_hydrawaittimelimit.png)
 
 
 
@@ -244,7 +237,6 @@ Python Script to Add User
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/1e64581adce910196643460e232d35489b2fee22/images/23_pythscrp_adduser.png) 
 
-![image](https://github.com/duffian/SIEM_SOC/blob/1e64581adce910196643460e232d35489b2fee22/images/24_pythscrp_adduser.png) 
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/183e122cc4c183b026186ecbfdbc3bf499ffd5da/images/24_maintaccpythscrp.png)
 
