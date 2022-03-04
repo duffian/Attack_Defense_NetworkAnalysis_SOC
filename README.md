@@ -111,7 +111,7 @@ What did the exploit achieve?
 
 **Avoiding Detection**
 
-Identifying the key data points and understanding how a system might be set up to monitor for these exploitations helps the offensive SIEM engineer test the cybersecurity of a system more thoroughly.
+Identifying the key data points and understanding how monitoring system alerts are generated helps the offensive SIEM engineer avoid detection. This expands the scope of potential system vulnerabilities not already accounted for. 
 
 Monitoring - Identify alerts, metrics, and thresholds 
 
