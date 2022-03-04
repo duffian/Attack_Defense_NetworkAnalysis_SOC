@@ -251,12 +251,6 @@ Python Script to Add User
 ![image](https://github.com/duffian/SIEM_SOC/blob/1e64581adce910196643460e232d35489b2fee22/images/24_pythscrp_adduser.png) 
 
 Could also write a script to install a backdoor shell listening for the attacker's instructions
-..
-...
-...
-
-
-
 
 
 
@@ -265,13 +259,15 @@ Could also write a script to install a backdoor shell listening for the attacker
 
 ## Defensive Security
 
-The objective is to configure Kibana alerts and make sure they are working correctly. Here we ensure the latest exploits and vulnerabilities are accounted for.
+The defensive SIEM engineer is to configure Kibana alerts and make sure they are working correctly. Here we ensure the latest exploits and vulnerabilities are accounted for.
+
+Communication from the offensive SIEM engineer can provide insight on how to modify alerts to protect against the most current cybersecurity threats.
 
 **Alerts Overview**
 
 When generating alerts it can be helpful to identify
-    - the metric that the alert monitors
-    - the threshold that metric fires at
+  - the metric that the alert monitors
+  - the threshold that metric fires at
 	
 ![image]() [S28]
 
