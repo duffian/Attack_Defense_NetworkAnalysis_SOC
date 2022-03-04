@@ -50,12 +50,7 @@ Our assessment uncovered the following critical vulnerabilities
 ***Exploitation - Poorly Secured SSH Port***
 
 What tool or technique did you use to exploit the vulnerability?
-
-Nmap port scanning.
-
->nmap port scanning.
-> nmap port scanning
-
+>nmap port scanning
 
 `nmap -O 192.168.1.0/24`
 
