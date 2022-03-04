@@ -55,7 +55,7 @@ Nmap port scanning.
 
 `nmap -O 192.168.1.0/24`
 
-[SCREENSHOT SLIDE 7]
+![image](https://github.com/duffian/SIEM_SOC/blob/ba1a85cafab83e375e0afd9a6100861d9ea0c7aa/images/linux_nmapcommand.png)
 
     - What did the exploit achieve?
 
