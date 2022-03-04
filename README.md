@@ -25,11 +25,11 @@ This project is organized into the following sections and subsections:
     - Malicious activity
 ___
 
-In this activity SIEM engineers conduct offensive security, defensive security, and network analysis acivities to provide the SOC team with a comprehensive security report. Approaching potential cybersecurity threats from these three perspectives is likely to provide a more complete threat analysis resulting in more effective mitigation strategies. 
+In this activity SIEM engineers conduct offensive, defensive, and network analysis acivities to provide the SOC team with a comprehensive security report. Approaching potential cybersecurity threats from multiple perspectives is likely to provide a more complete threat analysis. 
 
 ## Network Topology
 
-In this environment the ELK server is monitoring the vulnerable and taregeted machines as they are being attacked by the Kali machine. 
+In this environment the Kali Linux machine is the attacking machine. The ELK server is monitoring the vulnerable target machines as the attacking machine seeks to exploit the system.  
 ![image](https://github.com/duffian/SIEM_SOC/blob/c5adcec83f0fa95bcf9e85064ce7755635b05f36/images/proj3_topology.png)
 
 ## Offensive Security
