@@ -320,9 +320,6 @@ Effective hardening methods should explain
 
 ![image]()  [S36_c]
 
-**Implementing Patches with Ansible**
-Explain the vulnerability each task in the playbook addresses
-
 ## Network Analysis
 
 The objective is to analyze network traffic to identify suspicious or malicious activity.
@@ -336,20 +333,27 @@ Network analysis identified the following characteristics of the traffic on the 
 
 ***Behavioral Analysis***
 
-Purpose of traffic on network
+    - Purpose of traffic on network
 
-"Normal" Activity
+    - "Normal" Activity
 
-"Suspicious" Activity
+    - "Suspicious" Activity
+	
 ![image](https://github.com/duffian/SIEM_SOC/blob/2553f872a954fa8bff9c6686696817b625736453/images/adn36.png)
 
 ***Normal Activity - Web Traffic***
 
-Kind of Traffic - Web traffic
-Protocol - HTTP
-Specific user action - Browsing "orbike.com"
-Screenshots of packets justifying conclusions - 
-![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/42_normact_webtraf.png)
+Kind of Traffic - 
+> Web traffic
+
+Protocol - 
+>HTTP
+
+Specific user action - 
+> Browsing "orbike.com"
+
+Packet data justifying conclusions - 
+>![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/42_normact_webtraf.png)
 
 Description of any interesting files - 
 ![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/43_normact_webtraf.png)
@@ -357,20 +361,23 @@ Description of any interesting files -
 
 ***Normal Activity - DNS***
 
-Kind of Traffic - DNS query for "orbike.com"
-Protocol - UDP over port 53;8.8.8.8
-Specific user action - Querying Google DNS servers for "orbike.com" site data 
-![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/45_normact_dns.png) 
-Packet data justifying conclusions - 
-![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/46_normact_dns.png) 
-
-**Malicious Activity**
-***Malicious Activity - Time Thieves*** 
-
 Kind of Traffic - 
+>DNS query for "orbike.com"
+
 Protocol - 
+>UDP over port 53;8.8.8.8
+
 Specific user action - 
+> Querying Google DNS servers for "orbike.com" site data 
+![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/45_normact_dns.png) 
+
 Packet data justifying conclusions - 
+>![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/46_normact_dns.png) 
+
+Description of any interesting files - 
+>
+
+***Malicious Activity - Time Thieves*** 
 
 
 Users created a web server to access YouTube
@@ -379,8 +386,6 @@ Users created a web server to access YouTube
 ![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/48_malact_timethfa.png)
   - Discovered web server domain name "frank-n-ted.com"  and IP address 10.6.12.12
 ![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/48_malact_timethfb.png)
-
-
 
 
 ***Malicious Activity - Malicious File Download*** 
@@ -400,19 +405,33 @@ The malicious file was downloaded on machine IP Address 10.6.12.203
 
 ***Malicious Activity - Vulnerable Windows Host Machines Infected***
 Kind of Traffic - 
+>
+
 Protocol - 
+>
+
 Specific user action - 
+>
+
 Packet data justifying conclusions - 
+>
+
 
 Infected host machine on network
 ![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/50_malact_infect.png) 
 
 
-***Malicious Activity - Illegal Downloads*** 
 Kind of Traffic - 
+>
+
 Protocol - 
+>
+
 Specific user action - 
+>
+
 Packet data justifying conclusions - 
+>
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/51_malact_illdwnld.png) 
 
