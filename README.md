@@ -55,11 +55,11 @@ What tool or technique did you use to exploit the vulnerability?
 `nmap -O 192.168.1.0/24`
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/ba1a85cafab83e375e0afd9a6100861d9ea0c7aa/images/linux_nmapcommand.png)
+
 ![image](https://github.com/duffian/SIEM_SOC/blob/a10b171bf63d285966e70f6b8a8195b9f5c65c7a/images/nmapscanreport.png)
 
-    - What did the exploit achieve?
-
-Unauthorized access to the Target 1 machine was achieved by using the unsecured ssh port identified on the vulnerable machine.
+What did the exploit achieve?
+>Unauthorized access to the Target 1 machine was achieved by using the unsecured ssh port identified on the vulnerable machine.
 Identification of vulnerable ports to potentially gain unauthorized access to the "Target 1" system.
 
 `ssh Michael@192.168.1.110`
