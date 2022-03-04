@@ -45,7 +45,7 @@ Our assessment uncovered the following critical vulnerabilities
     - Weak user password
     - No file security
 
-[SCREENSHOT SLIDE 5]
+![image](https://github.com/duffian/SIEM_SOC/blob/b9bad2b5e48bc897300f255d3772730ce87673ee/images/adn5.png)
 
 **Exploitation - Poorly Secured SSH Port**
 
