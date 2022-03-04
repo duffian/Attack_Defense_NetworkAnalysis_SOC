@@ -259,19 +259,19 @@ Could also write a script to install a backdoor shell listening for the attacker
 
 ## Defensive Security
 
-The defensive SIEM engineer is to configure Kibana alerts and make sure they are working correctly. Here we ensure the latest exploits and vulnerabilities are accounted for.
+The objective is to configure Kibana alerts and make sure they are working correctly. Here we ensure the latest exploits and vulnerabilities are accounted for.
 
-Communication from the offensive SIEM engineer can provide insight on how to modify alerts to protect against the most current cybersecurity threats.
+**Alerts**
 
-**Alerts Overview**
-
-When generating alerts it can be helpful to identify
-  - the metric that the alert monitors
-  - the threshold that metric fires at
+When generating alerts it is important to identify
+  - the **metric** that the alert monitors
+  - the ***threshold** that metric fires at
 	
-![image]() [S28]
+![image](https://github.com/duffian/SIEM_SOC/blob/3b4b8043414274fd9f1d87fdca33da6bb8545a18/images/27_alerts_a.png)
+	
+![image](https://github.com/duffian/SIEM_SOC/blob/3b4b8043414274fd9f1d87fdca33da6bb8545a18/images/27_alerts_b.png) 
 
-**Alert: CPU Usage Monitor**
+***Alert - CPU Usage Monitor***
 
 ![image]() [S27_a]
 
