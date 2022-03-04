@@ -136,11 +136,11 @@ Alerts that detect this exploit
 >
 >Alerts monitoring for unauthorized access through ssh port
 
-Metric
->`WHEN sum () of http.request.bytes OVER all documents`
+Metric =
+`WHEN sum () of http.request.bytes OVER all documents`
 
-Threshold
->`IS ABOVE 3500 FOR THE LAST 1 minute`
+Threshold =
+`IS ABOVE 3500 FOR THE LAST 1 minute`
 
 How can you execute the same exploit without triggering the alert? 
 >Stealth scan
@@ -164,10 +164,10 @@ Alerts that detect this exploit
 >Alerts monitoring traffic from non-white-listed IPs
 
 Metric = 
->`WHEN count() GROUPED OVER top 5 ‘http.response.status_code`
+`WHEN count() GROUPED OVER top 5 ‘http.response.status_code`
 
 Threshold =
->`IS ABOVE 400`
+`IS ABOVE 400`
 
 How can you execute the same exploit without triggering the alert?
 >Scan a WordPress site using random user agents or passive detection
@@ -182,10 +182,10 @@ Alerts that detect this exploit
 >  - Alerts monitoring abnormally high CPU usage
 
 Metric =
->`WHEN max() OF system.process.cpu.total pct OVER all documents`
+`WHEN max() OF system.process.cpu.total pct OVER all documents`
 
 Threshold =
->`IS ABOVE 0.5` 
+`IS ABOVE 0.5` 
 
 How can you execute the same exploit without triggering the alert? 
 >limit the resources used to execute the brute force password cracking
@@ -198,8 +198,12 @@ How can you execute the same exploit without triggering the alert?
 >-w defines max wait time
   
 ![image](https://github.com/duffian/SIEM_SOC/blob/e65bdfaa5b51d75846e8a35e70dc7db5d75ab504/images/20_hydratasklimit.png) 
+![image]()
+
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/e65bdfaa5b51d75846e8a35e70dc7db5d75ab504/images/21_hydrawaittimelimit.png)
+![image]()
+
 
 ***Stealth Exploitation of No File Security***
 
@@ -211,10 +215,10 @@ Alerts that detect this exploit
 >  - root user logins
 
 Metric =
->`user.name: root AND source.ip: 192.168.1.90 AND destination.ip: 192.168.1.110 OR event.action: ssh_login OR event.outcome: success`
+`user.name: root AND source.ip: 192.168.1.90 AND destination.ip: 192.168.1.110 OR event.action: ssh_login OR event.outcome: success`
 
 Threshold =
->`IS ABOVE 1`
+`IS ABOVE 1`
 
 How can you execute the same exploit without triggering the alert?
 >Remove evidence of instrusion/unauthorized access
@@ -222,8 +226,6 @@ How can you execute the same exploit without triggering the alert?
 
 Are there alternative exploits that may perform better? 
 >If attempts to elevate to sudo privileges are restricted and if root login data is secured with up-to-date password hashes, malicious actors will have a much more difficult time gaining root or elevated permissions.
-
-![image](https://github.com/duffian/SIEM_SOC/blob/e65bdfaa5b51d75846e8a35e70dc7db5d75ab504/images/22_xtraalerts.png) 
 
 **Maintaining Access**
 
@@ -238,7 +240,7 @@ Python Script to Add User
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/1e64581adce910196643460e232d35489b2fee22/images/24_pythscrp_adduser.png) 
 
-
+![image]()
 
 
 
@@ -250,7 +252,7 @@ The objective is to configure Kibana alerts and make sure they are working corre
 
 When generating alerts it is important to identify
   - the **metric** that the alert monitors
-  - the ***threshold** that metric fires at
+  - the **threshold** that metric fires at
 	
 Compiled Alert Visualization
 
@@ -260,13 +262,14 @@ Compiled Alert Visualization
 
 ***Alert - CPU Usage Monitor***
 
-  - This alert monitors metric data from the OS and from services running on the server
+  - This alert uses Metricbeat to monitor metric data from the OS and from services running on the server
   - The alert is set to trigger when the total CPU process perccentage for all documents is above 0.5
   - The alert runs every minute and tracks the last five minutes
   
 ![image](https://github.com/duffian/SIEM_SOC/blob/45671798ee8e65d83e3701e111255ea6d8da6e92/images/28_alertcpuusage.png)
 
-***Alert: Excessive HTTP Errors***
+
+***Alert - Excessive HTTP Errors***
 
 
   - Utilize Packetbeat to analyze traffic between application processes and parse protocols such as HTTP and MySQL 
@@ -277,7 +280,8 @@ Compiled Alert Visualization
 ![image](https://github.com/duffian/SIEM_SOC/blob/45671798ee8e65d83e3701e111255ea6d8da6e92/images/30_alerthttpreqsize.png) 
 
 
-***Alert: HTTP Request Size Monitor***
+
+***Alert - HTTP Request Size Monitor***
 
   - Packetbeat used for this alert because Packetbeat monitors HTTP traffic 
   - Set alert to run every minute and trigger alert when the sum of HTTP request bytes for all documents is above 3500
@@ -297,7 +301,7 @@ Effective hardening methods should address
 
 ***Hardening Against Poorly Secured SSH Port on Target 1***
 
-Hardening/Mitigation
+Hardening
 >Configure host to change default ssh port 22 to a new custom port
 
 Why it works
@@ -307,7 +311,7 @@ Why it works
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/34_sshporthard_a.png) 
 
-Hardening/Mitigation
+Hardening
 >Enable IP-allowed whitelist rule for firewall
 
 Why it works
@@ -321,7 +325,7 @@ Why it works
 
 ***Hardening Against Weak User Password on Target 1***
 
-Hardening/Mitigation
+Hardening
 >Implement MFA
 
 >Institute and enforce strong password policy
@@ -333,14 +337,16 @@ Hardening/Mitigation
 
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/35_wkpwdhard_a.png)
+![image]()
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/35_wkpwdhard_b.png)  
+![image]()
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/35_wkpwdhard_c.png)  
 
 ***Hardening Against WordPress Enumeration on Target 1***
 
-Hardening/Mitigation
+Hardening
 >Configure host system to restrict the WordPress Rest API
 
 Why it works
@@ -355,7 +361,7 @@ How to Patch
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/36_enumhard_a.png)  
 
-Hardening/Mitigation
+Hardening
 >Disable scans and block user enumeration via .htcaccess
 
 Why it works
@@ -366,6 +372,7 @@ Why it works
 >Adds sections by editing code of the site's root 
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/36_enumhard_c.png)  
+![image]()
 
 ## Network Analysis
 
@@ -382,8 +389,6 @@ Network analysis identified the following characteristics of the traffic on the 
     - "Normal" Activity
 
     - "Suspicious" Activity
-	
-![image](https://github.com/duffian/SIEM_SOC/blob/2553f872a954fa8bff9c6686696817b625736453/images/adn36.png)
 
 ***Normal Activity - Web Traffic***
 
@@ -393,13 +398,13 @@ Kind of Traffic
 Protocol
 >HTTP
 
-Specific user action
+Specific User Action
 > Browsing "orbike.com"
 
-Packet data justifying conclusions
+Packet Data
 >![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/42_normact_webtraf.png)
 
-Description of any interesting files
+Noteable Data/Files
 ![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/43_normact_webtraf.png)
 
 
