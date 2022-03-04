@@ -193,9 +193,9 @@ Alerts that detect this exploit
 >CPU Usage Monitoring
 >  - Alerts monitoring abnormal CPU usage according to time.
 >  - Alerts monitoring abnormally high CPU usage.
-Metric =
+Metric 
 >`WHEN max() OF system.process.cpu.total pct OVER all documents`
-Threshold =
+Threshold 
 >`IS ABOVE 0.5` 
 
 How can you execute the same exploit without triggering the alert? 
@@ -215,25 +215,16 @@ How can you execute the same exploit without triggering the alert?
 ***Stealth Exploitation of No File Security***
 
 Alerts that detect this exploit
->Alerts monitoring traffic from;
+>Alerts monitoring traffic from
 >  - suspicious/malicious sources
 >  - non-white-listed IPs
 >  - unauthorized accounts
 >  - root user logins
 
->  root user logins
-
->  - root user logins
-
-  > root user logins
-  
-    > root user logins  
-
-
-Metric =
+Metric 
 >`user.name: root AND source.ip: 192.168.1.90 AND destination.ip: 192.168.1.110 OR event.action: ssh_login OR event.outcome: success`
 
-Threshold =
+Threshold 
 >`IS ABOVE 1`
 
 How can you execute the same exploit without triggering the alert?
@@ -249,9 +240,10 @@ Are there alternative exploits that may perform better?
 
 Maintain access by writing a script to 	quickly and stealthily add an unauthorized user to the target system
   - Using a script is quick and decreases the possibility of discovery
-  - A script can automatically obfuscate evidence it exists such as by moving or overwriting logs
+  - A script can automatically obfuscate evidence it exists by moving or overwriting logs
 
 Python Script to Add User
+
 `sudo python -c 'import.pty;pty.spawn("/bin/bash")'`
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/1e64581adce910196643460e232d35489b2fee22/images/23_pythscrp_adduser.png) 
@@ -259,6 +251,9 @@ Python Script to Add User
 ![image](https://github.com/duffian/SIEM_SOC/blob/1e64581adce910196643460e232d35489b2fee22/images/24_pythscrp_adduser.png) 
 
 Could also write a script to install a backdoor shell listening for the attacker's instructions
+..
+...
+...
 
 
 
