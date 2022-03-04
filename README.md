@@ -30,7 +30,7 @@ In this activity SIEM engineers conduct offensive security, defensive security, 
 ## Network Topology
 
 In this environment the ELK server is monitoring the vulnerable and taregeted machines as they are being attacked by the Kali machine. 
-![image](LINKTOIMAAGEINGITHUBREPOSITORY)
+![image](https://github.com/duffian/SIEM_SOC/blob/c5adcec83f0fa95bcf9e85064ce7755635b05f36/images/proj3_topology.png)
 
 ## Offensive Security
 
