@@ -267,24 +267,43 @@ When generating alerts it is important to identify
   - the **metric** that the alert monitors
   - the ***threshold** that metric fires at
 	
+Compiled Alert visualization
+
 ![image](https://github.com/duffian/SIEM_SOC/blob/3b4b8043414274fd9f1d87fdca33da6bb8545a18/images/27_alerts_a.png)
 	
 ![image](https://github.com/duffian/SIEM_SOC/blob/3b4b8043414274fd9f1d87fdca33da6bb8545a18/images/27_alerts_b.png) 
 
 ***Alert - CPU Usage Monitor***
 
-![image]() [S27_a]
+  - This alert monitors metric data from the OS and from services running on the server
+  - The alert is set to trigger when the total CPU process perccentage for all documents is above 0.5
+  - The alert runs every minute and tracks the last five minutes
+  
+![image](https://github.com/duffian/SIEM_SOC/blob/45671798ee8e65d83e3701e111255ea6d8da6e92/images/28_alertcpuusage.png)
 
-**Alert: Excessive HTTP Errors**
+***Alert: Excessive HTTP Errors***
 
-![image]() [S30]
 
-**Alert: HTTP Request Size Monitor**
+  - Utilize Packetbeat to analyze traffic between application processes and parse protocols such as HTTP and MySQL 
+    - Alert is set to group the top five HTTP response status codes generated over the last 5 minutes
+  - Set alert to run every 1 minutes and trigger alert when any HTTP response status code >400 is generated
+  
 
-![image]() [S31]
+![image](https://github.com/duffian/SIEM_SOC/blob/45671798ee8e65d83e3701e111255ea6d8da6e92/images/30_alerthttpreqsize.png) 
+
+
+***Alert: HTTP Request Size Monitor***
+
+  - Packetbeat used for this alert because Packetbeat monitors HTTP traffic 
+  - Set alert to run every minute and trigger alert when the sum of HTTP request bytes for all documents is above 3500
+    - Alert calculates sum of all requests every minute
+	
+	
+![image](https://github.com/duffian/SIEM_SOC/blob/2fc4c9eb842aa902fa6bcf550d6a1d6cacd7b345/images/31_alrthttpreqsiz.png)
 
 
 **Hardening**
+
 Effective hardening methods should explain
     - how to patch a target against the vulnerabilities
     - why the patch works and how to install the patch
