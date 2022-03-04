@@ -267,7 +267,7 @@ When generating alerts it is important to identify
   - the **metric** that the alert monitors
   - the ***threshold** that metric fires at
 	
-Compiled Alert visualization
+Compiled Alert Visualization
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/3b4b8043414274fd9f1d87fdca33da6bb8545a18/images/27_alerts_a.png)
 	
