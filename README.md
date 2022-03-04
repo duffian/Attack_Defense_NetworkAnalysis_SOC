@@ -77,14 +77,16 @@ WPScan enumeration
 
 `wpscan --url 192.168.1.110/wordpress -e u`
 
-[SCREENSHOT 9]
+
+![image](https://github.com/duffian/SIEM_SOC/blob/0ec4844e2ccdd26a87831fc1e3ef47458b2cb65f/images/9_enumeration.png) 
 
     - What did the exploit achieve?
 
 Acquisition of usernames associated with IP addresses.
 
 
-[SCREENSHOT 10]
+
+![image](https://github.com/duffian/SIEM_SOC/blob/0ec4844e2ccdd26a87831fc1e3ef47458b2cb65f/images/10_enum.png)
 
 **Exploitation - Weak User Password**
 
