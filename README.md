@@ -70,33 +70,223 @@ Identification of vulnerable ports to potentially gain unauthorized access to th
 
     - What tool or technique did you use to exploit the vulnerability?
 
+WPScan enumeration
+
+`wpscan --url 192.168.1.110/wordpress -e u`
+
+[SCREENSHOT 9]
+
     - What did the exploit achieve?
 
-    - [SCREENSHOT]
+Acquisition of usernames associated with IP addresses.
+
+
+[SCREENSHOT 10]
 
 **Exploitation - Weak User Password**
 
     - What tool or technique did you use to exploit the vulnerability?
 
+Brute forcing passwords using hydra
+
+`$ hydra -l michael -t 4 -P /usr/share/wordlists/rockyou.txt 192.168.1.110 ssh`
+
+
     - What did the exploit achieve?
 
-    - [SCREENSHOT]
+Discovered the login password for user “michael” allowing ssh access into Target 1 Machine
+
+[SCREENSHOT 11]
 
 
 **Exploitation - No File Security**
 
     - What tool or technique did you use to exploit the vulnerability?
 
+Simple directory exploration.
 
     - What did the exploit achieve?
 
+Privelege escalation: login data granted root access to Target 1 mysql data.
 
-    - [SCREENSHOT]
+`michael@target1:/var/www/html/wp-config.php`
+
+[SCREENSHOT 12-13]
+
+**Avoiding Detection**
+
+
+
+
+Identifying monitoring data and understanding how these data points might be used in mitigation helps to maintain unauthorized access / malicious activity and avoid detection.
+
+Monitoring - alerts, metrics, and thresholds 
+
+Mitigation - How can you execute the same exploit without triggering the alert? Are there alternative exploits that may perform better? 
+ 
+[SCREENSHOT 15]
+
+**Stealth Exploitation of Poorly Secured SSH Port**
+
+    - Monitoring Overview
+        - Alerts that detect this exploit:
+        - Metric = `WHEN        `
+        - Threshold = 
+
+    - Mitigation Detection
+        - How can you execute the same exploit without triggering the alert? 
+
+[SCREENSHOT 16-18]
+
+**Stealth Exploitation of WordPress Susceptible to Enumeration**
+
+    - Monitoring Overview
+        - Alerts that detect this exploit:
+        - Metric = `WHEN        `
+        - Threshold = 
+
+    - Mitigation Detection
+        - How can you execute the same exploit without triggering the alert? 
+
+[SCREENSHOT 19]
+
+**Stealth Exploitation of Weak User Password**
+
+    - Monitoring Overview
+        - Alerts that detect this exploit:
+        - Metric = `WHEN        `
+        - Threshold = 
+
+    - Mitigation Detection
+        - How can you execute the same exploit without triggering the alert? 
+
+[SCREENSHOT 20-21]
+
+**Stealth Exploitation of No File Security**
+
+    - Monitoring Overview
+        - Alerts that detect this exploit:
+        - Metric = `WHEN        `
+        - Threshold = 
+
+    - Mitigation Detection
+        - How can you execute the same exploit without triggering the alert? 
+
+[SCREENSHOT 22-23]
+
+**Maintaining Access**
+
+Python Script to Add User
+
+[SCREENSHOT 24-25]
+[s53-54]
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Defensive Security
 
 The objective is to configure Kibana alerts and make sure they are working correctly. Here we ensure the latest exploits and vulnerabilities are accounted for.
 
+**Alerts Overview**
+
+Identify the metric the alert monitors and the threshold that metric fires at.
+[S28]
+
+**Alert: CPU Usage Monitor**
+
+[S29]
+
+**Alert: Excessive HTTP Errors**
+
+[S30]
+
+**Alert: HTTP Request Size Monitor**
+
+[S31]
+
+
+**Hardening**
+Explain how to patch the target against the vulnerabilities. Explain why the patch works and how to install the patch.
+
+**Hardening Against on Target 1**
+
+[S35]
+
+**Hardening Against on Target 1**
+
+[S36]
+
+**Hardening Against on Target 1**
+
+[S37]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Network Analysis
 
 The objective is to analyze network traffic to identify suspicious or malicious activity.
+
+**Traffic Profile and Behavioral Analysis**
+
+[s39-40]
+
+**Normal Activity - Web Traffic**
+
+[s42-44]
+
+**Normal Activity - DNS**
+
+[s45-47]
+
+**Malicious Activity**
+
+    - Time Thieves
+
+[s49]
+
+    - Malicious File Download
+
+[s50]
+
+    - Vulnerable Windows Machines
+
+[s51]
+
+    - Illegal Downloads
+
+[s52]
+
+
+
+
+
+
+
+
+
+
+
+## Works Cited ##
+
+[s56]
