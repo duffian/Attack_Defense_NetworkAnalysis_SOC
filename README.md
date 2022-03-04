@@ -48,9 +48,14 @@ Our assessment uncovered the following critical vulnerabilities
 ![image](https://github.com/duffian/SIEM_SOC/blob/b9bad2b5e48bc897300f255d3772730ce87673ee/images/adn5.png)
 
 ***Exploitation - Poorly Secured SSH Port***
+
 What tool or technique did you use to exploit the vulnerability?
 
 Nmap port scanning.
+
+>nmap port scanning.
+> nmap port scanning
+
 
 `nmap -O 192.168.1.0/24`
 
