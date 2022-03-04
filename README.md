@@ -154,22 +154,30 @@ Threshold
 
 How can you execute the same exploit without triggering the alert? 
 >Stealth scan
+
 `nmap -sS`
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/dcdcb2395afc40104128b2e63049f37ae94e1a84/images/16_nmap_stlth.png) 
 
 >Fast scan
+
 >Limited time scan
+
 `nmap -F`
 ![image](https://github.com/duffian/SIEM_SOC/blob/dcdcb2395afc40104128b2e63049f37ae94e1a84/images/17_ssh_stlth.png)
 
 **Stealth Exploitation of WordPress Susceptible to Enumeration**
-Alerts that detect this exploit:
+
+Alerts that detect this exploit
+
 >Alerts monitoring traffic from suspicious sources
+
 >Alerts monitoring traffic from non-white-listed IPs
-Metric = 
+
+Metric 
 >`WHEN count() GROUPED OVER top 5 ‘http.response.status_code`
-Threshold =
+
+Threshold
 >`IS ABOVE 400`
 
 How can you execute the same exploit without triggering the alert?
@@ -180,6 +188,7 @@ How can you execute the same exploit without triggering the alert?
 ![image](https://github.com/duffian/SIEM_SOC/blob/dcdcb2395afc40104128b2e63049f37ae94e1a84/images/adn19.png)
 
 ***Stealth Exploitation of Weak User Password***
+
 Alerts that detect this exploit
 >CPU Usage Monitoring
 >  - Alerts monitoring abnormal CPU usage according to time.
@@ -200,6 +209,7 @@ How can you execute the same exploit without triggering the alert?
 >-w defines max wait time
   
 ![image](https://github.com/duffian/SIEM_SOC/blob/e65bdfaa5b51d75846e8a35e70dc7db5d75ab504/images/20_hydratasklimit.png) 
+
 ![image](https://github.com/duffian/SIEM_SOC/blob/e65bdfaa5b51d75846e8a35e70dc7db5d75ab504/images/21_hydrawaittimelimit.png)
 
 ***Stealth Exploitation of No File Security***
