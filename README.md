@@ -118,8 +118,7 @@ What did the exploit achieve?
 
 Understanding monitoring helps avoid mitigation.
 
-Identifying the key data points used and understanding how monitoring system alerts are generated helps the offensive SIEM engineer avoid detection. This expands the scope of potential system vulnerabilities not already accounted for. 
-
+Identifying the key data points and understanding how monitoring system alerts are generated helps the offensive SIEM engineer avoid detection. This expands the scope of potential system exploitations. 
 
 Monitoring 
   - Identify the alerts that could detect this exploit
@@ -134,6 +133,7 @@ Mitigation
 
 Alerts that detect this exploit
 >Port scanning alerts
+>
 >Alerts monitoring for unauthorized access through ssh port
 
 Metric
@@ -160,6 +160,7 @@ How can you execute the same exploit without triggering the alert?
 
 Alerts that detect this exploit
 >Alerts monitoring traffic from suspicious sources
+
 >Alerts monitoring traffic from non-white-listed IPs
 
 Metric = 
@@ -172,8 +173,6 @@ How can you execute the same exploit without triggering the alert?
 >Scan a WordPress site using random user agents or passive detection
 
 `wpscan --url 192.168.1.110/wordpress --stealthy -e u`
-
-![image](https://github.com/duffian/SIEM_SOC/blob/dcdcb2395afc40104128b2e63049f37ae94e1a84/images/adn19.png)
 
 ***Stealth Exploitation of Weak User Password***
 
@@ -253,7 +252,7 @@ When generating alerts it is important to identify
   - the **metric** that the alert monitors
   - the ***threshold** that metric fires at
 	
-Compiled Alert visualization
+Compiled Alert Visualization
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/3b4b8043414274fd9f1d87fdca33da6bb8545a18/images/27_alerts_a.png)
 	
@@ -291,8 +290,10 @@ Compiled Alert visualization
 **Hardening**
 
 Effective hardening methods should address
-    - how to patch a target against the vulnerabilities
-    - why the patch works and how to install the patch
+  - how to patch a target
+  
+  - how to patch a target against the vulnerabilities
+  - why the patch works and how to install the patch
 
 ***Hardening Against Poorly Secured SSH Port on Target 1***
 
@@ -307,12 +308,12 @@ Why it works
 ![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/34_sshporthard_a.png) 
 
 Hardening/Mitigation
->Enable IP allowed list on firewall
+>Enable IP-allowed whitelist rule for firewall
 
 Why it works
 >"Whitelisting" IPs creates a specific rule in your firewall to only open ssh port for the IPs listed
 >
->All other treffic is filtered and blocked
+>All other traffic is filtered and blocked
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/6e67131c57003a703bbf2f256cdf46929a9f5c15/images/34_sshporthard_b.png)
 
@@ -324,7 +325,7 @@ Hardening/Mitigation
 >Implement MFA
 
 >Institute and enforce strong password policy
->  - require several different types of characters
+>  - require several different types of characters be included in password 
 >  - institute mandatory password reset every 3 months and disallow repeat passwords
 
 >Configure lockout policy to protect against brute force attacks
@@ -429,9 +430,8 @@ Protocol
 
 Specific user action
 >Users created web server to access YouTube
->Domain name "frank-n-ted.com"
 
-Packet data justifying conclusions
+>Domain name "frank-n-ted.com"
 
 Users created a web server to access YouTube
 ![image](https://github.com/duffian/SIEM_SOC/blob/2553f872a954fa8bff9c6686696817b625736453/images/adn45.png)
@@ -446,13 +446,13 @@ Users created a web server to access YouTube
 Kind of Traffic
 >Malicious file download 
 
+>"june11.dll" was scanned by anti-malware software "VirusTotal" and flagged as a possible Trojan
+
 Protocol
 >http
 
 Specific user action
 >The malicious file `june11.dll` was downloaded on machine with IP Address 10.6.12.203
-
-Packet data justifying conclusions
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/ed4be6a476dc61e1cf6e4346b88a2ef80275417c/images/49_malactmalfiledl_a.png) 
 
@@ -461,7 +461,7 @@ Packet data justifying conclusions
 ![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/49_malfil_c.png)  
 
 
-"june11.dll" was scanned by anti-malware software "VirusTotal" and flagged as a possible Trojan
+
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/49_malfil_d.png) 
 
