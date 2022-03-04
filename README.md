@@ -111,7 +111,7 @@ What did the exploit achieve?
 
 **Avoiding Detection**
 
-Identifying the key data points and understanding how monitoring system alerts are generated helps the offensive SIEM engineer avoid detection. This expands the scope of potential system vulnerabilities not already accounted for. 
+Identifying the key data points and understanding how monitoring system alerts are generated helps the offensive SIEM engineer avoid detection. This expands the scope of potential system vulnerabilities. 
 
 Monitoring - Identify alerts, metrics, and thresholds 
 
@@ -350,7 +350,6 @@ Specific user action -
 Packet data justifying conclusions - 
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/51_malact_illdwnld.png) 
-
 
 
 
