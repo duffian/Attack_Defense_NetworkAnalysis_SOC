@@ -499,7 +499,6 @@ Specific user action
 >User torrented "Betty_Boop_Rhythm_on_the_Reservation.avi.torrent"
 
 Packet data justifying conclusions
->![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/51_malact_illdwnld.png) 
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/51_malact_illdwnld.png) 
 
