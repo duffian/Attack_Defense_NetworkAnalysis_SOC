@@ -60,53 +60,44 @@ What tool or technique did you use to exploit the vulnerability?
 
 What did the exploit achieve?
 >Unauthorized access to the Target 1 machine was achieved by using the unsecured ssh port identified on the vulnerable machine.
-Identification of vulnerable ports to potentially gain unauthorized access to the "Target 1" system.
+>Identification of vulnerable ports to potentially gain unauthorized access to the "Target 1" system.
 
 `ssh Michael@192.168.1.110`
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/b1ad487330827e1fdd4a7fa298a8a63e6a605ca5/images/8_sshmichael.png)
 
-**Exploitation - WordPress Susceptible to Enumeration**
+***Exploitation - WordPress Susceptible to Enumeration***
 
-    - What tool or technique did you use to exploit the vulnerability?
-
-WPScan enumeration
+What tool or technique did you use to exploit the vulnerability?
+>WPScan enumeration
 
 `wpscan --url 192.168.1.110/wordpress -e u`
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/0ec4844e2ccdd26a87831fc1e3ef47458b2cb65f/images/9_enumeration.png) 
-    - What did the exploit achieve?
-
-Acquisition of usernames associated with IP addresses.
-
+What did the exploit achieve?
+>Acquisition of usernames and their associated IP addresses.
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/0ec4844e2ccdd26a87831fc1e3ef47458b2cb65f/images/10_enum.png)
 
-**Exploitation - Weak User Password**
+***Exploitation - Weak User Password***
 
-    - What tool or technique did you use to exploit the vulnerability?
-
-Brute forcing passwords using hydra
+What tool or technique did you use to exploit the vulnerability?
+>Brute forcing passwords using hydra
 
 `$ hydra -l michael -t 4 -P /usr/share/wordlists/rockyou.txt 192.168.1.110 ssh`
 
-
-    - What did the exploit achieve?
-
-Discovered the login password for user “michael” allowing ssh access into Target 1 Machine
+What did the exploit achieve?
+>Discovered the login password for user “michael” allowing ssh access into Target 1 Machine
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/a89a67f44005945181d2897d97e6466921eec59a/images/11_hydra.png) 
 
+***Exploitation - No File Security***
 
-**Exploitation - No File Security**
+What tool or technique did you use to exploit the vulnerability?
+>Simple directory exploration.
 
-    - What tool or technique did you use to exploit the vulnerability?
-
-Simple directory exploration.
-
-    - What did the exploit achieve?
-
-Privelege escalation: login data granted root access to Target 1 mysql data.
+What did the exploit achieve?
+>Privelege escalation - login data granted root access to Target 1 mysql data
 
 `michael@target1:/var/www/html/wp-config.php`
 
@@ -120,7 +111,7 @@ Privelege escalation: login data granted root access to Target 1 mysql data.
 
 **Avoiding Detection**
 
-Identifying monitoring data and understanding how these data points might be used in mitigation helps to maintain unauthorized access, increase the duration of malicious activity, and avoid detection.
+Identifying monitoring data and understanding how these data points might be used to protect a system against a malicious cyber attacker helps the offensive SIEM engineer test the cybersecurity of a system more thoroughly.
 
 Monitoring - Identify alerts, metrics, and thresholds 
 
