@@ -469,21 +469,24 @@ The malicious file was downloaded on machine IP Address 10.6.12.203
 "june11.dll" was scanned by anti-malware software "VirusTotal" and flagged as a possible Trojan
 ![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/49_malfil_d.png) 
 
+
 ***Malicious Activity - Vulnerable Windows Host Machines Infected***
-Kind of Traffic - 
->
 
-Protocol - 
->
+Kind of Traffic 
+>Infection traffic had substantially higher data transfer
+>Potentially spreading infection 
 
-Specific user action - 
->
+Protocol
+>NBNS
 
-Packet data justifying conclusions - 
->
+>NetBios over TCP/IP
 
+Specific user action
+>Rotterdam workstation use
 
-Infected host machine on network
+Packet data justifying conclusions 
+>Infected host machine on network
+
 ![image](https://github.com/duffian/SIEM_SOC/blob/8d5e155b2dd84bba4138d95c32af683078cebda5/images/50_malact_infect.png) 
 
 
