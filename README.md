@@ -1,7 +1,7 @@
 # SIEM_SOC
 # Supporting SOC Infrastructure - Security Engineer and SIEM Investigation
 
-SOC Analysts have noticed some discrepancies with alerting in the Kibana system. Investigate by confirming Kibana alerts are working. Assess and exploit a vulnerable VM and monitor live network traffic to update Kibana alerts and thresholds. Present findings to SOC Manager and Engineering Manager in a comprehensive final report. to update Kibana alertsAttempt to  monitoring live network traffic to identify network security gaps, and present findings to 
+SOC Analysts have noticed some discrepancies with alerting in the Kibana system. Investigate by confirming Kibana alerts are working. Assess and exploit a vulnerable VM and monitor live network traffic to update Kibana alerts and thresholds. Present findings to SOC Manager and Engineering Manager in a comprehensive final report. 
 
 *This project is the result of a group effort. This project contains group work. All group members are credited on slide one of the presentation.*
 
