@@ -31,6 +31,24 @@ ___
 
 In this activity offensive security, defensive security, and network monitoring tasks are performed to evaluate potential cybersecurity threats. Approaching potential cybersecurity threats from multiple perspectives is likely to provide a more complete threat analysis. 
 
+Offensive and Defensive Objectives
+
+>Configure alerts in Kibana
+
+>Attack a machine on the network
+
+>Capture sensitive data (flags) on the victim machine
+
+Networking Analysis - Wireshark Objectives
+
+>Capture network traffic
+
+>Investigate suspicious activities
+
+>Collect corporate misuse evidence
+
+
+
 
 
 
