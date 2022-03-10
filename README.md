@@ -69,7 +69,6 @@ What tool or technique did you use to exploit the vulnerability?
 ![image](https://github.com/duffian/SIEM_SOC/blob/a10b171bf63d285966e70f6b8a8195b9f5c65c7a/images/nmapscanreport.png)
 
 What did the exploit achieve?
->Unauthorized access to the Target 1 machine was achieved by using the unsecured ssh port identified on the vulnerable machine.
 
 >Identification of vulnerable ports to potentially gain unauthorized access to the "Target 1" system.
 
@@ -83,7 +82,7 @@ What tool or technique did you use to exploit the vulnerability?
 ![image](https://github.com/duffian/SIEM_SOC/blob/0ec4844e2ccdd26a87831fc1e3ef47458b2cb65f/images/9_enumeration.png) 
 
 What did the exploit achieve?
->Acquisition of usernames and their associated IP addresses.
+>Acquisition of usernames.
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/0ec4844e2ccdd26a87831fc1e3ef47458b2cb65f/images/10_enum.png)
 
@@ -129,12 +128,14 @@ What did the exploit achieve?
 What tool or technique did you use to exploit the vulnerability?
 >Simple directory exploration.
 
+`michael@target1:/var/www/html` 
+
+`$ nano wp-config.php`
+
 What did the exploit achieve?
 >Privelege escalation - Acquisition of MySQL login data stored in plain text.
 
 >Access to `Flag 1`
-
-`michael@target1:/var/www/html/wp-config.php`
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/a89a67f44005945181d2897d97e6466921eec59a/images/12_rootcreds.png)
 
@@ -203,7 +204,7 @@ Create `wp_hashes.txt` file containing each user password hash and run John the 
 What did the exploit achieve?
 >User 'steven' login credentials
 
->Root access
+>Root access to Target 1
 
 >Location of Flag 4
 
