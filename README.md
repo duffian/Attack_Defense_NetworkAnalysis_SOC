@@ -3,7 +3,7 @@
 
 SOC Analysts have noticed some discrepancies with alerting in the Kibana system. Investigate by confirming Kibana alerts are working. Assess and exploit a vulnerable VM and monitor live network traffic to update Kibana alerts and thresholds. Present findings to SOC Manager and Engineering Manager in a comprehensive final report. 
 
-*This project is the result of a group effort. This project contains group work. All group members are credited on slide one of the presentation.*
+*This project is the result of a group effort. This project contains group work with contributions from Kathryn Lahr, James Liddell, Mike Monahan, Juddy Otieno, Grant Stanford, and Ian Duff. The group presentation was given in January 2022 as part of the GWU Cybersecurity Boot Camp. All group members are also credited on slide one of the presentation.*
 
 [comment]: # (this is the syntax for a comment)
 
