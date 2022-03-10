@@ -29,7 +29,7 @@ This project is organized into the following sections and subsections:
     - Malicious activity
 ___
 
-In this activity offensive security, defensive security, and network monitoring tasks are performed to evaluate Kibana. Approaching potential cybersecurity threats from multiple perspectives is likely to provide a more complete threat analysis. 
+In this activity offensive security, defensive security, and network monitoring tasks are performed to evaluate potential cybersecurity threats. Approaching potential cybersecurity threats from multiple perspectives is likely to provide a more complete threat analysis. 
 
 
 
